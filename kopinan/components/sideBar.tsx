@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { NavConfig } from '../types/types'
+import Link from 'next/link'
 
 const NavOptions: NextPage = () => {
     const navOptions: NavConfig[] = [
@@ -7,37 +8,37 @@ const NavOptions: NextPage = () => {
             index: 1,
             title: "Home",
             logo: "",
-            link: "",
+            link: "/",
         },
         {
             index: 2,
             title: "Menu",
             logo: "",
-            link: "",
+            link: "/menu",
         },
         {
             index: 3,
             title: "History",
             logo: "",
-            link: "",
+            link: "/history",
         },
         {
             index: 4,
             title: "Wallet",
             logo: "",
-            link: "",
+            link: "/wallet",
         },
         {
             index: 5,
             title: "Promos",
             logo: "",
-            link: "",
+            link: "/promo",
         },
         {
             index: 6,
             title: "Setting",
             logo: "",
-            link: "",
+            link: "/setting",
         }
     ]
     
@@ -46,7 +47,7 @@ const NavOptions: NextPage = () => {
             {
                 navOptions.map(nav => 
                     <div key={nav.index} className="flex justify-center items-center rounded-lg text-md px-2 py-6 text-[#BBB8C4] hover:text-white hover:bg-[#A7775C]">
-                        <button>{nav.title}</button>
+                        <Link href={nav.link}><button>{nav.title}</button></Link>
                     </div>
                 )
             }
